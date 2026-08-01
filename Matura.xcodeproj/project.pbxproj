@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB4E923ECA1DE9ED13D4D823 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA867E18BBB613E4E5A96E9 /* AppState.swift */; };
+		3E083C29DE4FE7493D6EAA17 /* MaturaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A82D5A3F56D32A4D41ECEE /* MaturaApp.swift */; };
+		ACD1D2A0CBE0DBC680E2A0F3 /* PixelArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2781698E962D7311FAC3F /* PixelArt.swift */; };
+		2F6D2B52D33002C6D2D4C472 /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57A70AC3655B57791AB997 /* CommonViews.swift */; };
+		2126B2359CA81709D96EE34F /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319641F3740BCB7E3D1DBF37 /* KeyboardView.swift */; };
+		2AF3F6EA3786B9950DBD53C5 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B3EF4B068AE16786F0B46 /* PlayView.swift */; };
+		158C76678D50A4690A196FEC /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B27F5603020582143C4BA /* Screens.swift */; };
+		7653EA9F9BEE168EABDF2486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C64B7D7CAED2B1C7F1D70C /* Assets.xcassets */; };
+		2380C3E30682B445AB29CB22 /* MaturaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 500DF401653516474610A71D /* MaturaCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AEA867E18BBB613E4E5A96E9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A6A82D5A3F56D32A4D41ECEE /* MaturaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaturaApp.swift; sourceTree = "<group>"; };
+		10B2781698E962D7311FAC3F /* PixelArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelArt.swift; sourceTree = "<group>"; };
+		CA57A70AC3655B57791AB997 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
+		319641F3740BCB7E3D1DBF37 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		557B3EF4B068AE16786F0B46 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		8E4B27F5603020582143C4BA /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		D1C64B7D7CAED2B1C7F1D70C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84871F2B41CC43D97EA8CBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		484A4C6BA0260C604D492743 /* Matura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B0EAC1C67A2F2EB9E6EB6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2380C3E30682B445AB29CB22 /* MaturaCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0596BBDB4DCC95D5D4F10C = {
+			isa = PBXGroup;
+			children = (
+				13C4608B5138EBE9B3A45A55 /* App */,
+				6F7199ED7B63CDA338A0FB82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F7199ED7B63CDA338A0FB82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				484A4C6BA0260C604D492743 /* Matura.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13C4608B5138EBE9B3A45A55 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AEA867E18BBB613E4E5A96E9 /* AppState.swift */,
+				A6A82D5A3F56D32A4D41ECEE /* MaturaApp.swift */,
+				10B2781698E962D7311FAC3F /* PixelArt.swift */,
+				CC81102D2BDDA8F9834A5A12 /* Views */,
+				D1C64B7D7CAED2B1C7F1D70C /* Assets.xcassets */,
+				84871F2B41CC43D97EA8CBB6 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CC81102D2BDDA8F9834A5A12 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA57A70AC3655B57791AB997 /* CommonViews.swift */,
+				319641F3740BCB7E3D1DBF37 /* KeyboardView.swift */,
+				557B3EF4B068AE16786F0B46 /* PlayView.swift */,
+				8E4B27F5603020582143C4BA /* Screens.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C38795E4B56EB9BC0E1E46CC /* Matura */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA761691A51ACBE657F2A897 /* Build configuration list for PBXNativeTarget "Matura" */;
+			buildPhases = (
+				9261F04E014268C1FB6C1C5E /* Sources */,
+				0B0EAC1C67A2F2EB9E6EB6F7 /* Frameworks */,
+				B04831CC372489EBF0287850 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Matura;
+			packageProductDependencies = (
+				500DF401653516474610A71D /* MaturaCore */,
+			);
+			productName = Matura;
+			productReference = 484A4C6BA0260C604D492743 /* Matura.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		244210E48437B6556980A702 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					C38795E4B56EB9BC0E1E46CC = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 88651694C9EF2D25BD8E75A6 /* Build configuration list for PBXProject "Matura" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = pl;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				pl,
+				en,
+				Base,
+			);
+			mainGroup = AA0596BBDB4DCC95D5D4F10C;
+			packageReferences = (
+				A825FFEAF0EE3FB65BD105D4 /* XCLocalSwiftPackageReference "." */,
+			);
+			productRefGroup = 6F7199ED7B63CDA338A0FB82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C38795E4B56EB9BC0E1E46CC /* Matura */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B04831CC372489EBF0287850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7653EA9F9BEE168EABDF2486 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9261F04E014268C1FB6C1C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4E923ECA1DE9ED13D4D823 /* AppState.swift in Sources */,
+				3E083C29DE4FE7493D6EAA17 /* MaturaApp.swift in Sources */,
+				ACD1D2A0CBE0DBC680E2A0F3 /* PixelArt.swift in Sources */,
+				2F6D2B52D33002C6D2D4C472 /* CommonViews.swift in Sources */,
+				2126B2359CA81709D96EE34F /* KeyboardView.swift in Sources */,
+				2AF3F6EA3786B9950DBD53C5 /* PlayView.swift in Sources */,
+				158C76678D50A4690A196FEC /* Screens.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1C9FDA849B6AD8E4A706194E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26D9D48DC73579A75B561D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE335F9BD7EB2AED8E098696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matura.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBE7EFC753BC975243F818E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matura.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88651694C9EF2D25BD8E75A6 /* Build configuration list for PBXProject "Matura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C9FDA849B6AD8E4A706194E /* Debug */,
+				26D9D48DC73579A75B561D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA761691A51ACBE657F2A897 /* Build configuration list for PBXNativeTarget "Matura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE335F9BD7EB2AED8E098696 /* Debug */,
+				FBE7EFC753BC975243F818E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A825FFEAF0EE3FB65BD105D4 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		500DF401653516474610A71D /* MaturaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MaturaCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 244210E48437B6556980A702 /* Project object */;
+}

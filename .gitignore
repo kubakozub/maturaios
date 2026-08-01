@@ -1,0 +1,25 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Podpisywanie - klucze i profile nigdy nie trafiaja do repozytorium
+*.mobileprovision
+*.p12
+*.cer
+ExportOptions.plist
+
+# macOS
+.DS_Store
