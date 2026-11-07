@@ -1,116 +1,114 @@
 # Matura: iOS
 
-Gra do nauki angielskiego słownictwa w zakresie matury podstawowej. Port wersji
-na Androida: **ten sam silnik, to samo słownictwo, ta sama mechanika**, napisane
-od nowa w Swifcie i SwiftUI.
+A game for learning the English vocabulary covered by the Polish *matura* school leaving
+exam at basic level. A port of the Android version: **the same engine, the same
+vocabulary, the same mechanics**, rewritten from scratch in Swift and SwiftUI.
 
-**Wersja 0.8.0** (build 9) · 102 zestawy · 2084 hasła · 14 działów matury podstawowej
+**Version 0.8.0** (build 9) · 102 sets · 2084 entries · 14 topic areas of the basic exam
 
-- Wersja na Androida: **[github.com/kubakozub/Matura](https://github.com/kubakozub/Matura)**
-- Demo przeglądarkowe: **[kubakozub.github.io/Matura](https://kubakozub.github.io/Matura)**
+- Android version: **[github.com/kubakozub/Matura](https://github.com/kubakozub/Matura)**
+- Browser demo: **[kubakozub.github.io/Matura](https://kubakozub.github.io/Matura)**
 
----
+## How it plays
 
-## Jak się gra
+A cannon stands in the middle of the board. Monsters come in from both sides, each with an
+English word above its head. You type the Polish translation: the cannon turns and fires.
+A monster that reaches the cannon costs a life.
 
-Na środku planszy stoi działko. Z obu boków nadchodzą potworki, każdy
-z angielskim słowem nad głową. Wpisujesz polskie tłumaczenie: działko obraca się
-i strzela. Potworek, który dojdzie do działka, zabiera życie.
+Typing matches on a prefix, so `cie` highlights both `ciekawość` and `cierpki`. Enter
+fires when the text is an exact match, and when several entries match, the nearest monster
+is the one that dies.
 
-Pisanie działa po przedrostku: `cie` podświetla i `ciekawość`, i `cierpki`. Enter
-strzela, gdy tekst pasuje dokładnie; przy kilku pasujących ginie najbliższy.
-
-## Układ projektu
+## Project layout
 
 ```
-Package.swift              pakiet SPM z MaturaCore
-Sources/MaturaCore/        cała mechanika, bez SwiftUI i bez UIKit
-  Models.swift             zestawy, hasła, opcje, profil, wyniki, odznaki
-  Matching.swift           normalizacja i dopasowanie odpowiedzi
-  GameEngine.swift         symulacja trybu CLASSIC
-  SetSearch.swift          wyszukiwanie zestawów po nazwie i po hasłach
-  BuiltInSets.swift        wygenerowane słownictwo: nie edytować ręcznie
-  Strings.swift            napisy PL/EN
-  Repository.swift         zapis stanu do JSON-a
-Tests/MaturaCoreTests/     58 testów, te same co po stronie Androida
-App/                       warstwa SwiftUI
-  MaturaApp.swift          punkt wejścia i stos ekranów
-  AppState.swift           stan aplikacji, zapis i odczyt
-  PixelArt.swift           ładowanie grafiki, kafle, dobór sprite'ów
-  Views/                   ekrany, plansza, klawiatura
-  Assets.xcassets          97 obrazków w rozdzielczości natywnej
-Matura.xcodeproj           projekt dla Xcode
+Package.swift              the SPM package holding MaturaCore
+Sources/MaturaCore/        all the mechanics, with no SwiftUI and no UIKit
+  Models.swift             sets, entries, options, profile, scores, badges
+  Matching.swift           answer normalisation and matching
+  GameEngine.swift         the CLASSIC mode simulation
+  SetSearch.swift          searching sets by name and by entry
+  BuiltInSets.swift        generated vocabulary, not to be edited by hand
+  Strings.swift            Polish and English interface text
+  Repository.swift         state persistence to JSON
+Tests/MaturaCoreTests/     58 tests, the same ones as on the Android side
+App/                       the SwiftUI layer
+  MaturaApp.swift          entry point and screen stack
+  AppState.swift           application state, load and save
+  PixelArt.swift           asset loading, tiles, sprite selection
+  Views/                   screens, board, keyboard
+  Assets.xcassets          97 images at native resolution
+Matura.xcodeproj           the Xcode project
 ```
 
-**`MaturaCore` celowo nie zna SwiftUI ani UIKit.** Dzięki temu cała mechanika gry
-kompiluje się i testuje bez symulatora: także na Linuksie, zwykłym
-`swift test`. To ta sama decyzja co po stronie Androida, gdzie silnik jest
-czystym Kotlinem bez typów Androida, i z tego samego powodu: testy, które
-wymagają emulatora, uruchamia się rzadko, więc przestają cokolwiek chronić.
+**`MaturaCore` deliberately knows nothing about SwiftUI or UIKit.** That is what lets the
+whole game mechanic compile and be tested without a simulator, including on Linux with a
+plain `swift test`. It is the same decision as on the Android side, where the engine is
+pure Kotlin with no Android types, and it is made for the same reason: tests that require
+an emulator get run rarely, and so they stop protecting anything.
 
-## Budowanie
+## Building
 
-Aplikacja na iOS wymaga **macOS i Xcode 15**: inaczej się nie da, to nie jest
-ograniczenie tego projektu, tylko Apple.
+The iOS app needs **macOS and Xcode 15**. There is no way around that, and it is Apple's
+constraint rather than this project's.
 
 ```bash
-open Matura.xcodeproj          # cel „Matura", dowolny symulator iPhone'a
+open Matura.xcodeproj          # target "Matura", any iPhone simulator
 ```
 
-Sam silnik można zbudować i przetestować **na dowolnym systemie ze Swiftem**,
-także na Linuksie:
+The engine on its own builds and tests **on any system with Swift**, Linux included:
 
 ```bash
 swift build
-swift test                     # 58 testów
+swift test                     # 58 tests
 ```
 
-Właśnie tak jest sprawdzany ten port: silnik przechodzi pełny zestaw testów poza
-macOS-em, warstwa SwiftUI została sprawdzona składniowo (`swiftc -parse`).
-**Na symulatorze nie była jeszcze uruchomiona**: to pierwsza rzecz do zrobienia
-przy pierwszym otwarciu na Macu.
+That is exactly how this port is verified: the engine passes the full test suite off
+macOS, and the SwiftUI layer has been checked syntactically (`swiftc -parse`).
+**It has not yet been run on a simulator**, which is the first thing to do when it is next
+opened on a Mac.
 
-## Co jest przeniesione, a co nie
+## What is ported and what is not
 
-| Element | Stan |
+| Item | State |
 |---|---|
-| Silnik CLASSIC z pełną progresją trudności | tak, identyczny |
-| Dopasowanie odpowiedzi z pomijaniem ogonków | tak, identyczne |
-| Wyszukiwanie zestawów po nazwie i po hasłach | tak |
-| Tempo gry CALM / NORM / FAST | tak |
-| 102 zestawy, 2084 hasła | tak, generowane z tego samego źródła |
-| Własne zestawy, edytor, kasowanie | tak |
-| Osiągnięcia i ranking lokalny | tak |
-| Klawiatura A-Z rysowana w grze | tak |
-| Grafika pikselowa bez wygładzania | tak |
-| **Font bitmapowy** | **nie**, napisy idą systemowym krojem o stałej szerokości |
-| Dźwięk | nie, opcja jest, ale nic jeszcze nie gra |
+| The CLASSIC engine with full difficulty progression | yes, identical |
+| Answer matching that ignores Polish diacritics | yes, identical |
+| Searching sets by name and by entry | yes |
+| Game pace CALM / NORM / FAST | yes |
+| 102 sets, 2084 entries | yes, generated from the same source |
+| Custom sets, the editor, deletion | yes |
+| Achievements and a local leaderboard | yes |
+| An A-Z keyboard drawn inside the game | yes |
+| Pixel art with no smoothing | yes |
+| **Bitmap font** | **no**, text uses the system monospaced face |
+| Sound | no, the option exists but nothing plays yet |
 
-Font bitmapowy to jedyna świadoma różnica wobec Androida. Renderowanie własnego
-arkusza glifów w SwiftUI wymaga cięcia obrazu przez CoreGraphics i własnego
-układu tekstu; do pierwszego uruchomienia na sprzęcie nie było tego jak sprawdzić,
-więc lepiej, żeby wersja startowa wyglądała trochę inaczej, niż żeby napisy
-wychodziły przesunięte o kilka pikseli.
+The bitmap font is the one deliberate difference from Android. Rendering a custom glyph
+sheet in SwiftUI means slicing the image through CoreGraphics and doing your own text
+layout, and before a first run on real hardware there was no way to check it. A first
+version that looks slightly different is better than one whose text is a few pixels out of
+place.
 
-## Tempo gry
+## Game pace
 
-Odstęp między falami to **6,5 s** na pierwszym poziomie, skracany o 0,14 s na
-poziom aż do 2,6 s. Te liczby nie są z sufitu: średnia odpowiedź w zestawach ma
-osiem liter, a przy trzech literach na sekundę na klawiaturze ekranowej plus
-chwili na przypomnienie sobie słowa jeden potworek zajmuje graczowi około
-czterech sekund. Wcześniejsza wersja wypuszczała je co 3,4 s, czyli szybciej,
-niż dało się je zdejmować, i to już na pierwszym poziomie.
+The gap between waves is **6.5 s** on the first level, shortening by 0.14 s per level down
+to 2.6 s. Those numbers are not arbitrary: the average answer in these sets is eight
+letters, and at three letters per second on an on-screen keyboard plus a moment to recall
+the word, one monster occupies a player for roughly four seconds. An earlier version
+released them every 3.4 s, which is faster than they could be cleared, and that was true
+from the first level.
 
-Opcja **Tempo** rozciąga te odstępy o 35% (CALM) albo ściska o 25% (FAST),
-bo różnica między piszącym dwie a cztery litery na sekundę jest dwukrotna
-i jedno ustawienie nie może pasować wszystkim.
+The **Pace** option stretches those gaps by 35% (CALM) or compresses them by 25% (FAST),
+because the difference between someone typing two letters per second and four is a factor
+of two, and no single setting fits everyone.
 
-## Prywatność
+## Privacy
 
-Aplikacja nie ma dostępu do sieci, nie zbiera żadnych danych i nie ma logowania.
-Wszystko leży w prywatnym katalogu aplikacji i znika razem z nią.
+The app has no network access, collects no data and has no sign-in. Everything lives in
+the app's private directory and goes away with it.
 
-## Licencja
+## License
 
-Kod: do własnego użytku autora. Grafika pochodzi z zakupionego pakietu pixel art
-i nie jest objęta licencją na redystrybucję.
+Code: for the author's own use. The artwork comes from a purchased pixel art pack and is
+not covered by a redistribution licence.
