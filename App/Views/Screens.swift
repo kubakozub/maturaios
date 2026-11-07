@@ -323,7 +323,7 @@ struct EditorView: View {
                                     title = s.title
                                     rows = s.entries.isEmpty ? [Entry("", "")] : s.entries
                                 }
-                                // Pierwsze dotknięcie uzbraja, drugie kasuje —
+                                // Pierwsze dotknięcie uzbraja, drugie kasuje:
                                 // bez okienka, ale i bez przypadkowej utraty zestawu.
                                 Button {
                                     if armedForDelete == s.id {

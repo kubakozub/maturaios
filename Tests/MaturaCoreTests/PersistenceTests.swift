@@ -72,7 +72,7 @@ final class PersistenceTests: XCTestCase {
     }
 
     /// Zestawy z pudełka naprawdę zawierają zderzenia przedrostków, więc
-    /// podświetlanie ma na czym pracować — inaczej ta funkcja byłaby ozdobą.
+    /// podświetlanie ma na czym pracować: inaczej ta funkcja byłaby ozdobą.
     func testShippedSetsReallyDoContainPrefixCollisions() {
         var collisions = 0
         for set in BuiltInSets.all() {

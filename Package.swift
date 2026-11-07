@@ -2,7 +2,7 @@
 import PackageDescription
 
 // MaturaCore celowo nie zna SwiftUI ani UIKit. Dzięki temu cała mechanika gry
-// kompiluje się i testuje także poza macOS-em — tak samo jak w wersji na
+// kompiluje się i testuje także poza macOS-em: tak samo jak w wersji na
 // Androida, gdzie silnik jest czystym Kotlinem bez typów Androida.
 let package = Package(
     name: "MaturaCore",

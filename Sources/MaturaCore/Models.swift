@@ -58,14 +58,14 @@ public struct WordSet: Codable, Equatable, Identifiable, Sendable {
 
 /// Tempo rozgrywki.
 ///
-/// Wpisywanie na klawiaturze ekranowej idzie ludziom bardzo różnie — od dwóch
+/// Wpisywanie na klawiaturze ekranowej idzie ludziom bardzo różnie: od dwóch
 /// do czterech liter na sekundę. Przy średniej długości odpowiedzi ośmiu liter
 /// daje to od trzech do sześciu sekund na jednego potworka, czyli dwukrotną
 /// różnicę w tym, ile gra w ogóle wybacza. Jedno tempo dla wszystkich musiałoby
 /// więc krzywdzić albo wolniej piszących, albo szybszych.
 ///
 /// `spawnScale` rozciąga odstęp między potworkami, `speedScale` zmienia tempo
-/// ich marszu. Pierwsze decyduje o tym, ile trzeba pisać na minutę, drugie —
+/// ich marszu. Pierwsze decyduje o tym, ile trzeba pisać na minutę, drugie:
 /// ile czasu jest na pojedyncze słowo.
 public enum Tempo: String, Codable, CaseIterable, Sendable {
     case calm, normal, fast

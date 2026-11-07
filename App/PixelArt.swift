@@ -30,7 +30,7 @@ extension Color {
 
 /// Ładowanie i cięcie grafiki pikselowej.
 ///
-/// Grafika jest w natywnej rozdzielczości i **nigdy** nie może być wygładzana —
+/// Grafika jest w natywnej rozdzielczości i **nigdy** nie może być wygładzana:
 /// dwuliniowe skalowanie zamienia pixel art w rozmytą papkę. Stąd wszędzie
 /// `.interpolation(.none)`, a przy kaflach całkowity krok, żeby na styku nie
 /// pojawiały się szczeliny.
@@ -70,7 +70,7 @@ enum PixelArt {
 
 /// Który sprite dostaje potworek na danym poziomie.
 ///
-/// Poziom brany jest z chwili pojawienia się, nie bieżący — inaczej potworek
+/// Poziom brany jest z chwili pojawienia się, nie bieżący: inaczej potworek
 /// zmieniałby wygląd w trakcie marszu, gdy gracz akurat awansuje.
 enum MonsterArt {
     private static let tiers = [

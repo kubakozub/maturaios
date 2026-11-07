@@ -93,7 +93,7 @@ final class SetSearchTests: XCTestCase {
 }
 
 /// Liczebnik przy wyniku wyszukiwania. Polski ma trzy formy liczby mnogiej,
-/// a najczęstszy błąd to potraktowanie go jak angielskiego — „2 pasujących haseł"
+/// a najczęstszy błąd to potraktowanie go jak angielskiego: „2 pasujących haseł"
 /// zamiast „2 pasujące hasła". Nastki są osobnym wyjątkiem.
 final class MatchCountTests: XCTestCase {
 

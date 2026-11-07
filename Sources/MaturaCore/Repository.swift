@@ -2,12 +2,12 @@ import Foundation
 
 /// Zapis stanu do jednego dokumentu JSON.
 ///
-/// Cały stan — profil, opcje, zestawy i historia wyników — mieści się w jednym
+/// Cały stan: profil, opcje, zestawy i historia wyników: mieści się w jednym
 /// pliku, bo przy tej skali baza danych byłaby narzutem bez zysku. Uszkodzony
 /// albo niekompletny plik jest po cichu zastępowany stanem początkowym, żeby
 /// aplikacja wstała zamiast się wywrócić.
 ///
-/// Klasa nie zna SwiftUI — dostaje katalog z zewnątrz, więc daje się przetestować
+/// Klasa nie zna SwiftUI: dostaje katalog z zewnątrz, więc daje się przetestować
 /// na katalogu tymczasowym.
 public final class Repository {
 
@@ -25,7 +25,7 @@ public final class Repository {
         self.url = directory.appendingPathComponent(Self.fileName)
     }
 
-    /// Katalog dokumentów aplikacji — prywatny dla niej, kasowany razem z nią.
+    /// Katalog dokumentów aplikacji: prywatny dla niej, kasowany razem z nią.
     public static func defaultDirectory() -> URL {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -50,7 +50,7 @@ public final class Repository {
         }
     }
 
-    /// Wbudowane zestawy nie są zapisywane — zawsze biorą się z kodu, więc
+    /// Wbudowane zestawy nie są zapisywane: zawsze biorą się z kodu, więc
     /// aktualizacja aplikacji przynosi nowe słownictwo bez migracji pliku.
     /// Na dysku leżą tylko zestawy gracza.
     public func allSets(custom: [WordSet]) -> [WordSet] {

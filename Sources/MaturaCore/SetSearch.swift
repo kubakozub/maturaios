@@ -1,6 +1,6 @@
 import Foundation
 
-/// Wyszukiwanie zestawów — po nazwie i po hasłach w środku.
+/// Wyszukiwanie zestawów: po nazwie i po hasłach w środku.
 ///
 /// Przy stu dwóch zestawach lista przewija się długo, a pytanie, które gracz
 /// naprawdę sobie zadaje, brzmi zwykle „w którym zestawie jest to słowo", a nie
@@ -13,7 +13,7 @@ import Foundation
 /// jak gracz zdążył się nauczyć.
 public enum SetSearch {
 
-    /// - `titleMatch`: czy trafienie poszło przez nazwę zestawu — takie idą na
+    /// - `titleMatch`: czy trafienie poszło przez nazwę zestawu: takie idą na
     ///   górę, bo kto wpisuje nazwę działu, ten szuka działu, a nie słowa.
     /// - `entries`: hasła, które pasują; puste, gdy trafienie było tylko po nazwie.
     public struct Hit: Identifiable, Equatable {
@@ -65,7 +65,7 @@ public enum SetSearch {
             }
             // Wśród trafień po słowach najpierw te, w których pasuje ich najwięcej.
             // Sortowanie w Swifcie nie jest stabilne, więc remisy rozstrzyga
-            // pozycja wyjściowa — inaczej kolejność potrafiłaby skakać.
+            // pozycja wyjściowa: inaczej kolejność potrafiłaby skakać.
             let ranked = byWord.enumerated()
                 .sorted { a, b in
                     if a.element.entries.count != b.element.entries.count {

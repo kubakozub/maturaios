@@ -41,15 +41,15 @@ public struct Str: Sendable {
         pick("Szukaj: nazwa działu albo słówko", "Search: set name or a word")
     }
     public var nothingFound: String {
-        pick("Nic nie pasuje. Spróbuj krótszego fragmentu — ogonki i wielkość liter nie mają znaczenia.",
-             "Nothing matches. Try a shorter fragment — accents and letter case do not matter.")
+        pick("Nic nie pasuje. Spróbuj krótszego fragmentu: ogonki i wielkość liter nie mają znaczenia.",
+             "Nothing matches. Try a shorter fragment: accents and letter case do not matter.")
     }
     public var needTwoEntries: String {
         pick("Zestaw musi mieć przynajmniej jedno wypełnione hasło z tłumaczeniem.",
              "A set needs at least one row with both sides filled in.")
     }
 
-    /// Polski ma trzy formy liczby mnogiej, nie dwie: 1 hasło, 2 hasła, 5 haseł —
+    /// Polski ma trzy formy liczby mnogiej, nie dwie: 1 hasło, 2 hasła, 5 haseł:
     /// i wyjątek na nastkach, przez który 12 to „haseł", a 22 znowu „hasła".
     public func matchCount(_ n: Int) -> String {
         if lang == .en { return n == 1 ? "1 matching entry" : "\(n) matching entries" }

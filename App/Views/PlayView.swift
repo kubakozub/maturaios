@@ -214,7 +214,7 @@ struct PlayView: View {
 }
 
 /// Silnik jest klasą referencyjną, a SwiftUI odświeża się po zmianie
-/// `@Published`. Zamiast rozgłaszać cały stan co klatkę, podbijamy licznik —
+/// `@Published`. Zamiast rozgłaszać cały stan co klatkę, podbijamy licznik:
 /// jeden sygnał na klatkę zamiast kilkunastu.
 @MainActor
 final class EngineHost: ObservableObject {

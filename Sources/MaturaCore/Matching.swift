@@ -2,7 +2,7 @@ import Foundation
 
 /// Normalizacja i dopasowywanie odpowiedzi.
 ///
-/// Klawiatura narysowana w grze ma tylko A–Z, spację, cofanie i strzałki — nie
+/// Klawiatura narysowana w grze ma tylko A-Z, spację, cofanie i strzałki: nie
 /// ma polskich znaków. Gracz fizycznie nie jest w stanie wpisać „zręczny", więc
 /// porównanie musi pomijać ogonki, inaczej gra byłaby nie do przejścia własną
 /// klawiaturą. Wielkość liter i powtórzone spacje też nie mają znaczenia.
@@ -46,7 +46,7 @@ public enum Matching {
     ///   - „konsorcjum",
     ///   - „syndykat (związek przedsiębiorstw)" oraz „syndykat" bez dopisku.
     ///
-    /// Nawias traktujemy jak objaśnienie, a nie część odpowiedzi — gracz na
+    /// Nawias traktujemy jak objaśnienie, a nie część odpowiedzi: gracz na
     /// ograniczonej klawiaturze i tak nie wpisze nawiasów.
     public static func acceptedAnswers(_ definition: String) -> [String] {
         var out: [String] = []

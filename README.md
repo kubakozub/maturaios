@@ -1,4 +1,4 @@
-# Matura — iOS
+# Matura: iOS
 
 Gra do nauki angielskiego słownictwa w zakresie matury podstawowej. Port wersji
 na Androida: **ten sam silnik, to samo słownictwo, ta sama mechanika**, napisane
@@ -14,7 +14,7 @@ od nowa w Swifcie i SwiftUI.
 ## Jak się gra
 
 Na środku planszy stoi działko. Z obu boków nadchodzą potworki, każdy
-z angielskim słowem nad głową. Wpisujesz polskie tłumaczenie — działko obraca się
+z angielskim słowem nad głową. Wpisujesz polskie tłumaczenie: działko obraca się
 i strzela. Potworek, który dojdzie do działka, zabiera życie.
 
 Pisanie działa po przedrostku: `cie` podświetla i `ciekawość`, i `cierpki`. Enter
@@ -24,12 +24,12 @@ strzela, gdy tekst pasuje dokładnie; przy kilku pasujących ginie najbliższy.
 
 ```
 Package.swift              pakiet SPM z MaturaCore
-Sources/MaturaCore/        cała mechanika — bez SwiftUI i bez UIKit
+Sources/MaturaCore/        cała mechanika, bez SwiftUI i bez UIKit
   Models.swift             zestawy, hasła, opcje, profil, wyniki, odznaki
   Matching.swift           normalizacja i dopasowanie odpowiedzi
   GameEngine.swift         symulacja trybu CLASSIC
   SetSearch.swift          wyszukiwanie zestawów po nazwie i po hasłach
-  BuiltInSets.swift        wygenerowane słownictwo — nie edytować ręcznie
+  BuiltInSets.swift        wygenerowane słownictwo: nie edytować ręcznie
   Strings.swift            napisy PL/EN
   Repository.swift         zapis stanu do JSON-a
 Tests/MaturaCoreTests/     58 testów, te same co po stronie Androida
@@ -43,14 +43,14 @@ Matura.xcodeproj           projekt dla Xcode
 ```
 
 **`MaturaCore` celowo nie zna SwiftUI ani UIKit.** Dzięki temu cała mechanika gry
-kompiluje się i testuje bez symulatora — także na Linuksie, zwykłym
+kompiluje się i testuje bez symulatora: także na Linuksie, zwykłym
 `swift test`. To ta sama decyzja co po stronie Androida, gdzie silnik jest
 czystym Kotlinem bez typów Androida, i z tego samego powodu: testy, które
 wymagają emulatora, uruchamia się rzadko, więc przestają cokolwiek chronić.
 
 ## Budowanie
 
-Aplikacja na iOS wymaga **macOS i Xcode 15** — inaczej się nie da, to nie jest
+Aplikacja na iOS wymaga **macOS i Xcode 15**: inaczej się nie da, to nie jest
 ograniczenie tego projektu, tylko Apple.
 
 ```bash
@@ -67,7 +67,7 @@ swift test                     # 58 testów
 
 Właśnie tak jest sprawdzany ten port: silnik przechodzi pełny zestaw testów poza
 macOS-em, warstwa SwiftUI została sprawdzona składniowo (`swiftc -parse`).
-**Na symulatorze nie była jeszcze uruchomiona** — to pierwsza rzecz do zrobienia
+**Na symulatorze nie była jeszcze uruchomiona**: to pierwsza rzecz do zrobienia
 przy pierwszym otwarciu na Macu.
 
 ## Co jest przeniesione, a co nie
@@ -81,10 +81,10 @@ przy pierwszym otwarciu na Macu.
 | 102 zestawy, 2084 hasła | tak, generowane z tego samego źródła |
 | Własne zestawy, edytor, kasowanie | tak |
 | Osiągnięcia i ranking lokalny | tak |
-| Klawiatura A–Z rysowana w grze | tak |
+| Klawiatura A-Z rysowana w grze | tak |
 | Grafika pikselowa bez wygładzania | tak |
-| **Font bitmapowy** | **nie** — napisy idą systemowym krojem o stałej szerokości |
-| Dźwięk | nie — opcja jest, ale nic jeszcze nie gra |
+| **Font bitmapowy** | **nie**, napisy idą systemowym krojem o stałej szerokości |
+| Dźwięk | nie, opcja jest, ale nic jeszcze nie gra |
 
 Font bitmapowy to jedyna świadoma różnica wobec Androida. Renderowanie własnego
 arkusza glifów w SwiftUI wymaga cięcia obrazu przez CoreGraphics i własnego
@@ -99,7 +99,7 @@ poziom aż do 2,6 s. Te liczby nie są z sufitu: średnia odpowiedź w zestawach
 osiem liter, a przy trzech literach na sekundę na klawiaturze ekranowej plus
 chwili na przypomnienie sobie słowa jeden potworek zajmuje graczowi około
 czterech sekund. Wcześniejsza wersja wypuszczała je co 3,4 s, czyli szybciej,
-niż dało się je zdejmować — i to już na pierwszym poziomie.
+niż dało się je zdejmować, i to już na pierwszym poziomie.
 
 Opcja **Tempo** rozciąga te odstępy o 35% (CALM) albo ściska o 25% (FAST),
 bo różnica między piszącym dwie a cztery litery na sekundę jest dwukrotna

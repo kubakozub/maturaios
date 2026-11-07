@@ -2,12 +2,12 @@ import SwiftUI
 
 /// Klawiatura narysowana w grze.
 ///
-/// Celowo tylko A–Z, spacja, cofanie, strzałki i Enter — bez polskich znaków.
+/// Celowo tylko A-Z, spacja, cofanie, strzałki i Enter, bez polskich znaków.
 /// To nie niedoróbka, tylko założenie: gracz nie traci czasu na przełączanie
 /// układu, a dopasowanie odpowiedzi i tak pomija ogonki, więc „zreczny" zalicza
 /// się tak samo jak „zręczny".
 ///
-/// Systemowa klawiatura iOS nie wchodzi w grę — zabrałaby połowę ekranu, którą
+/// Systemowa klawiatura iOS nie wchodzi w grę: zabrałaby połowę ekranu, którą
 /// zajmuje plansza, i podpowiadałaby słowa, co zniszczyłoby sens ćwiczenia.
 struct KeyboardView: View {
     let onKey: (Character) -> Void

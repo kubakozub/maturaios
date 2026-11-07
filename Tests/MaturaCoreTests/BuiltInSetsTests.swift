@@ -90,7 +90,7 @@ final class BuiltInSetsTests: XCTestCase {
         }
     }
 
-    /// Zestaw ma pokazać każde słowo kilka razy w jednej rozgrywce — przy stu
+    /// Zestaw ma pokazać każde słowo kilka razy w jednej rozgrywce: przy stu
     /// hasłach słowo wracałoby raz na kwadrans, czyli praktycznie nigdy.
     func testEverySetIsSmallEnoughToBeClearedInOneRun() {
         let tooBig = BuiltInSets.all().filter { $0.entries.count > 25 }

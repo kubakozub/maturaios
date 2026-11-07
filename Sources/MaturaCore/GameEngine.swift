@@ -5,7 +5,7 @@ import Foundation
 /// Wszystko dzieje się w kwadracie jednostkowym: działko stoi w (0.5, 0.5),
 /// potworki wchodzą z lewej i prawej krawędzi i idą w jego stronę. Warstwa
 /// rysująca przelicza te współrzędne na piksele, dzięki czemu ta klasa nie zna
-/// SwiftUI ani UIKit-u i daje się testować zwykłym XCTest-em — także na Linuksie,
+/// SwiftUI ani UIKit-u i daje się testować zwykłym XCTest-em: także na Linuksie,
 /// bez symulatora.
 public final class GameEngine {
 
@@ -56,7 +56,7 @@ public final class GameEngine {
     private var lastLevel: Int = 1
 
     public private(set) var typed: String = ""
-    /// Pozycja karetki w `typed` — dokument projektowy przewiduje strzałki.
+    /// Pozycja karetki w `typed`: dokument projektowy przewiduje strzałki.
     public private(set) var cursor: Int = 0
 
     public private(set) var lives: Int
@@ -135,7 +135,7 @@ public final class GameEngine {
         cursor = typed.count
     }
 
-    /// Potworki, których odpowiedź zaczyna się od wpisanego tekstu — te się podświetlają.
+    /// Potworki, których odpowiedź zaczyna się od wpisanego tekstu: te się podświetlają.
     public func highlightedIds() -> Set<Int> {
         guard !typed.trimmed.isEmpty else { return [] }
         return Set(monsters.filter { Matching.isPrefixOfAny(typed, $0.answers) }.map(\.id))
@@ -369,7 +369,7 @@ public final class GameEngine {
 
     // MARK: - Pomoc dla testów
 
-    /// Wystawia potworka o znanym słowie — używane przez testy, żeby plansza
+    /// Wystawia potworka o znanym słowie: używane przez testy, żeby plansza
     /// nie zmieniała się pod ręką w trakcie sprawdzania.
     @discardableResult
     public func debugAddMonster(_ prompt: String, _ definition: String,
@@ -422,7 +422,7 @@ public struct Monster: Identifiable, Equatable, Sendable {
     public var armored: Bool
     public let variant: Int
     public var incoming: Int = 0
-    /// Poziom trudności z chwili pojawienia się — wybiera sprite, więc nie może się zmieniać.
+    /// Poziom trudności z chwili pojawienia się: wybiera sprite, więc nie może się zmieniać.
     public let spawnLevel: Int
     /// Odlicza po trafieniu, żeby warstwa rysująca pokazała klatkę uderzenia.
     public var hitFlash: Double = 0
@@ -466,7 +466,7 @@ public enum SubmitResult: Equatable, Sendable {
     case ignored
 }
 
-/// Własny generator, żeby przebiegi dały się powtórzyć w testach — tak samo jak
+/// Własny generator, żeby przebiegi dały się powtórzyć w testach: tak samo jak
 /// wstrzykiwany `Random(42)` po stronie Androida. `SystemRandomNumberGenerator`
 /// tego nie umie.
 public struct SeededRandom: Sendable {

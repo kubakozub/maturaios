@@ -1,6 +1,6 @@
 import Foundation
 
-/// Wbudowane słownictwo — wygenerowane, nie edytować ręcznie.
+/// Wbudowane słownictwo: wygenerowane, nie edytować ręcznie.
 ///
 /// Źródłem jest ten sam plik, z którego powstaje wersja na Androida, więc obie
 /// aplikacje mają identyczną zawartość co do hasła. Jedna funkcja na zestaw

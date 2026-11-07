@@ -59,7 +59,7 @@ final class AppState: ObservableObject {
         persist()
     }
 
-    /// Wbudowanych nie da się skasować — usuwanie dotyczy tylko własnych zestawów.
+    /// Wbudowanych nie da się skasować: usuwanie dotyczy tylko własnych zestawów.
     func delete(setId: String) {
         customSets.removeAll { $0.id == setId }
         persist()

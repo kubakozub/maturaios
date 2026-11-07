@@ -2,7 +2,7 @@ import SwiftUI
 import MaturaCore
 
 /// Wspólne klocki interfejsu. Wszystkie mają ostre krawędzie i grube obwódki,
-/// żeby pasowały do pixel artu — SwiftUI domyślnie zaokrągla i wygładza.
+/// żeby pasowały do pixel artu: SwiftUI domyślnie zaokrągla i wygładza.
 
 struct ScreenScaffold<Content: View>: View {
     let title: String
